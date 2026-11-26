@@ -1,0 +1,309 @@
+/* =====================================================
+   Simulador de Ahorro - Estilos
+   ===================================================== */
+
+/* ---------- VARIABLES DE COLOR ---------- */
+:root {
+    --verde: #1f9d74;
+    --verde-oscuro: #157a59;
+    --verde-claro: #e3f6ef;
+    --rojo: #d64545;
+    --rojo-claro: #fdeaea;
+    --amarillo: #f5b83d;
+    --fondo: #f3f6f9;
+    --blanco: #ffffff;
+    --texto: #23313f;
+    --texto-suave: #6b7a89;
+    --borde: #dde3ea;
+}
+
+/* ---------- BASE ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--verde-oscuro);
+}
+
+/* ---------- ENCABEZADO Y PIE ---------- */
+.encabezado {
+    background: linear-gradient(135deg, var(--verde), var(--verde-oscuro));
+    color: var(--blanco);
+    text-align: center;
+    padding: 32px 16px;
+}
+
+.encabezado h1 {
+    font-size: 1.9rem;
+    margin-bottom: 6px;
+}
+
+.pie {
+    text-align: center;
+    padding: 20px;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+/* ---------- LAYOUT ---------- */
+.contenedor {
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.panel {
+    background-color: var(--blanco);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.fila {
+    display: flex;
+    gap: 10px;
+}
+
+.texto-suave {
+    color: var(--texto-suave);
+    margin-top: 8px;
+}
+
+/* ---------- INPUTS Y BOTONES ---------- */
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px 12px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--verde);
+    border-color: transparent;
+}
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-principal {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+.btn-principal:hover {
+    background-color: var(--verde-oscuro);
+}
+
+.btn-eliminar {
+    background-color: var(--rojo-claro);
+    color: var(--rojo);
+}
+
+.btn-eliminar:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+
+/* ---------- FORMULARIO ---------- */
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    align-items: end;
+}
+
+.formulario label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.formulario .check {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    grid-column: 1 / 3;
+}
+
+/* ---------- MENSAJE DE FEEDBACK ---------- */
+.mensaje {
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.mensaje.exito {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+    border-left: 5px solid var(--verde);
+}
+
+.mensaje.error {
+    background-color: var(--rojo-claro);
+    color: var(--rojo);
+    border-left: 5px solid var(--rojo);
+}
+
+.oculto {
+    display: none;
+}
+
+/* ---------- RESUMEN ---------- */
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.dato {
+    background-color: var(--fondo);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+}
+
+.dato span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+
+.dato strong {
+    font-size: 1.2rem;
+}
+
+/* ---------- LISTA DE METAS ---------- */
+.herramientas {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.lista-metas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.tarjeta {
+    border: 1px solid var(--borde);
+    border-left: 5px solid var(--amarillo);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tarjeta.cumplida {
+    border-left-color: var(--verde);
+    background-color: var(--verde-claro);
+}
+
+.tarjeta h3 {
+    font-size: 1.1rem;
+}
+
+.etiqueta {
+    font-size: 0.75rem;
+    background-color: var(--verde);
+    color: var(--blanco);
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.barra {
+    background-color: var(--borde);
+    border-radius: 20px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.barra-progreso {
+    background-color: var(--verde);
+    height: 100%;
+}
+
+.acciones {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.acciones input {
+    flex: 1;
+}
+
+.vacio {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--texto-suave);
+    padding: 20px;
+}
+
+/* Resaltado cuando se agrega o se aporta a una meta */
+.resaltada {
+    animation: resaltar 1.5s ease;
+}
+
+@keyframes resaltar {
+    0% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 4px var(--amarillo);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+/* ---------- RESPONSIVE (celulares) ---------- */
+@media (max-width: 700px) {
+    .formulario,
+    .herramientas,
+    .lista-metas,
+    .resumen {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .formulario .check,
+    #input-buscar {
+        grid-column: 1 / -1;
+    }
+
+    .lista-metas {
+        grid-template-columns: 1fr;
+    }
+}
