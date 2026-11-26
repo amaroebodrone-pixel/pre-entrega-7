@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Ahorro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <h1>💰 Simulador de Ahorro Personal</h1>
+        <p>Cargá tus metas, aportá dinero y mirá cuánto te falta para cumplirlas.</p>
+    </header>
+
+    <main class="contenedor">
+        <!-- Mensajes de feedback para el usuario -->
+        <div id="mensaje" class="mensaje oculto"></div>
+
+        <!-- AHORRO MENSUAL -->
+        <section class="panel">
+            <h2>Mi ahorro mensual</h2>
+            <div class="fila">
+                <input type="number" id="input-ahorro" placeholder="Ej: 15000" min="1">
+                <button type="button" id="btn-ahorro" class="btn btn-principal">Guardar</button>
+            </div>
+            <p id="texto-ahorro" class="texto-suave"></p>
+        </section>
+
+        <!-- RESUMEN GENERAL -->
+        <section class="panel">
+            <h2>Resumen</h2>
+            <div id="resumen" class="resumen"></div>
+        </section>
+
+        <!-- FORMULARIO NUEVA META -->
+        <section class="panel">
+            <h2>Agregar una meta</h2>
+            <div class="formulario">
+                <label>
+                    Nombre de la meta
+                    <input type="text" id="input-nombre" placeholder="Ej: Auto">
+                </label>
+                <label>
+                    ¿Cuánto necesitás?
+                    <input type="number" id="input-objetivo" placeholder="Ej: 500000" min="1">
+                </label>
+                <label>
+                    ¿Cuánto tenés ahorrado? (opcional)
+                    <input type="number" id="input-inicial" placeholder="Ej: 0" min="0">
+                </label>
+                <label class="check">
+                    <input type="checkbox" id="input-prioritaria">
+                    Es mi meta más importante
+                </label>
+                <button type="button" id="btn-agregar" class="btn btn-principal">+ Agregar meta</button>
+            </div>
+        </section>
+
+        <!-- LISTA DE METAS -->
+        <section class="panel">
+            <h2>Mis metas</h2>
+            <div class="herramientas">
+                <input type="text" id="input-buscar" placeholder="🔎 Buscar meta...">
+                <select id="select-filtro">
+                    <option value="todas">Todas</option>
+                    <option value="pendientes">Pendientes</option>
+                    <option value="cumplidas">Cumplidas</option>
+                </select>
+                <select id="select-orden">
+                    <option value="prioridad">Orden: prioridad</option>
+                    <option value="mayor-monto">Mayor monto</option>
+                    <option value="menor-monto">Menor monto</option>
+                    <option value="avance">Más avanzadas</option>
+                </select>
+            </div>
+            <div id="contenedor-metas" class="lista-metas"></div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Simulador de Ahorro · Pre-Entrega 7</p>
+    </footer>
+</body>
+</html>
